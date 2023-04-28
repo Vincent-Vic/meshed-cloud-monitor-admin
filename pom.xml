@@ -5,7 +5,7 @@
     <parent>
         <groupId>cn.meshed.cloud</groupId>
         <artifactId>meshed-cloud-parent</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,42 +14,46 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <meshed-cloud-common-starter.version>1.0-SNAPSHOT</meshed-cloud-common-starter.version>
-        <meshed-cloud-nacos-starter.version>1.0-SNAPSHOT</meshed-cloud-nacos-starter.version>
-        <meshed-cloud-web-starter.version>1.0-SNAPSHOT</meshed-cloud-web-starter.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>cn.meshed.cloud</groupId>
-            <artifactId>meshed-cloud-web-starter</artifactId>
-            <version>${meshed-cloud-web-starter.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.meshed.cloud</groupId>
-            <artifactId>meshed-cloud-common-starter</artifactId>
-            <version>${meshed-cloud-common-starter.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.meshed.cloud</groupId>
             <artifactId>meshed-cloud-nacos-starter</artifactId>
-            <version>${meshed-cloud-nacos-starter.version}</version>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+            <version>2.1.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
         </dependency>
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
             <version>2.6.7</version>
         </dependency>
-        <!-- 开启认证功能-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <artifactId>spring-boot-starter-json</artifactId>
         </dependency>
-        <!-- 监控告警 email-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
+            <groupId>cn.meshed.cloud</groupId>
+            <artifactId>meshed-cloud-security-starter</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
