@@ -1,0 +1,7 @@
+service:
+  security:
+    exclude-uris:
+      - /actuator
+      - /actuator/**
+      - /doc.html
+      - /v3/**

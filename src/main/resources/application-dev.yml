@@ -1,5 +1,10 @@
 service:
   security:
+    exclude-uris:
+      - /actuator
+      - /actuator/**
+      - /doc.html
+      - /v3/**
     mock:
       enable: true
       user-id: 1
