@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>meshed-cloud-monitor-admin</artifactId>
-
+    <version>1.0.0-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -50,23 +50,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-json</artifactId>
         </dependency>
+
         <dependency>
             <groupId>cn.meshed.cloud</groupId>
-            <artifactId>meshed-cloud-security-starter</artifactId>
+            <artifactId>meshed-cloud-security-oauth2-client-starter</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
-    <!--
-        SpringBoot的Maven插件, 能够以Maven的方式为应用提供SpringBoot的支持，可以将
-        SpringBoot应用打包为可执行的jar或war文件, 然后以通常的方式运行SpringBoot应用
-     -->
     <build>
-        <finalName>${artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.5.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -74,20 +71,11 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <mainClass>cn.meshed.cloud.AdminApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
-    <!-- 配置远程仓库 -->
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
 </project>
